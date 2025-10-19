@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <!-- Font Awesome cdn css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./styles.css">
+    
+    <title>To Do List</title>
+</head>
+<body>
+    <div class="todo-container-root">
+
+        <header>
+                <div>
+                    <h1>My ToDo List</h1>
+                    <div class="brand-sub">Add new task</div>
+                </div>
+                <div class="header-actions">
+                    <button id="theme-toggle" class="theme-toggle" aria-pressed="false" aria-label="Toggle theme" title="Toggle theme">🌙</button>
+                </div>
+        </header>
+    <form action="" class="todo-form" aria-label="Add todo">
+        <label for="todo-input" class="visually-hidden">Add new task</label>
+        <input id="todo-input" type="text" class="todo-input" placeholder="Add a new task..." aria-label="Todo input">
+        <label for="priority-select" class="visually-hidden">Priority</label>
+        <select id="priority-select" class="priority-select" aria-label="Task priority" title="Priority">
+            <option value="low" selected>Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+        </select>
+        <button class="todo-button" type="submit" aria-label="Add task" title="Add task">
+            <i class="fas fa-plus-circle fa-lg" aria-hidden="true"></i>
+        </button>
+        <div class="select">
+            <label for="filter-todo" class="visually-hidden">Filter</label>
+            <select id="filter-todo" name="todos" class="filter-todo" aria-label="Filter todos">
+                <option value="all">All</option>
+                <option value="completed">Completed</option>
+                <option value="incomplete">Incomplete</option>
+            </select>
+        </div>
+    </form>
+
+    <!-- toolbar: task count and quick actions -->
+    <div class="toolbar" aria-label="Todo actions">
+        <!-- progress bar lives above the list to show completion percentage -->
+        <div class="progress-wrap" aria-hidden="false">
+            <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
+        </div>
+        <div class="task-count" aria-live="polite">0 tasks</div>
+        <div class="toolbar-actions">
+            <button class="mark-all-btn" type="button" aria-label="Mark all as complete">Mark all</button>
+            <button class="clear-completed-btn" type="button" aria-label="Clear completed tasks">Clear completed</button>
+            <button class="clear-all-btn" type="button" aria-label="Clear all tasks">Clear all</button>
+        </div>
+    </div>
+
+    <div class="todo-container">
+        <div class="empty-state" hidden>
+            <p class="empty-title">No tasks yet</p>
+            <p class="empty-desc">Add a task using the input above to get started.</p>
+        </div>
+        <ul class="todo-list" aria-live="polite"></ul>
+    </div>
+
+    </div> <!-- .todo-container-root -->
+
+    <script src="./script.js"></script>
+    
+</body>
+</html>
